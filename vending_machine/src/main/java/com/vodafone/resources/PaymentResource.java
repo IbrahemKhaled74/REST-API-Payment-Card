@@ -63,7 +63,7 @@ public class PaymentResource {
             throw new InvalidCardNumberException("The Card Number " + payment.cardNumber + " is Invalid");
         }
         //Convert Date To Year And Month
-        java.util.Date pDate = cardService.getAllCardInfoByCardNumber("5678901234567890").getExpireDate();
+        java.util.Date pDate = cardService.getAllCardInfoByCardNumber(payment.cardNumber).getExpireDate();
         DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String strDate = dateFormat.format(pDate);
 
